@@ -1,0 +1,25 @@
+# Environment variables — NEVER push this to GitHub
+.env
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django specific
+*.log
+db.sqlite3
+media/
+
+# VS Code settings
+.vscode/
+
+# Windows system files
+Thumbs.db
+desktop.ini
