@@ -1,0 +1,7 @@
+build:
+  builder: NIXPACKS
+
+deploy:
+  startCommand: "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn Resturant_Project.wsgi"
+  healthcheckPath: /
+  restartPolicyType: ON_FAILURE
