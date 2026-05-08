@@ -48,8 +48,6 @@ INSTALLED_APPS = [
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 LOGIN_REDIRECT_URL = '/'
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,7 +129,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR / "static")]
+STATICFILES_DIRS = [BASE_DIR / 'Static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = 'media/'
 
@@ -149,9 +148,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'  # Use your email provider's SMTP server
 EMAIL_PORT = 587  # Standard port for TLS encryption
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mishra572002@gmail.com'  # Replace with your email address
-EMAIL_HOST_PASSWORD = 'your-email-password'  # Replace with your email password
-DEFAULT_FROM_EMAIL = 'your-email@gmail.com'  # The sender's email
+EMAIL_HOST_USER = 'amanjain30105@gmail.com'  # Replace with your email address
+EMAIL_HOST_PASSWORD = '123456'  # Replace with your email password
+DEFAULT_FROM_EMAIL = 'amanjain310105@gmail.com'  # The sender's email
 
 # Retrieve the Google Maps API key from environment variables
 GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')

@@ -3,9 +3,61 @@
 {% block class %}class="sub_page"{% endblock class %}
 {% block table_status %}active{% endblock table_status %}
 {% block main %}
+<style>
+  /* Premium Book Table UI */
+  .premium-book-section {
+      background: linear-gradient(135deg, #1f1c2c, #928DAB) !important;
+      padding: 80px 0;
+      color: #fff;
+  }
+  .premium-book-section .heading_container h2 {
+      color: #ffbe33; 
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  }
+  .premium-book-section .form_container {
+      background: rgba(255, 255, 255, 0.05) !important;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  }
+  .premium-book-section .form-control {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #fff !important;
+      border-radius: 10px;
+  }
+  .premium-book-section .form-control::placeholder {
+      color: #ddd !important;
+  }
+  .premium-book-section .form-control option {
+      background: #1f1c2c;
+      color: #fff;
+  }
+  .premium-book-section .btn_box button {
+      background: linear-gradient(45deg, #ffbe33, #e6a524) !important;
+      border: none;
+      color: #111 !important;
+      border-radius: 50px;
+      padding: 12px 35px;
+      font-weight: 800;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+  }
+  .premium-book-section .btn_box button:hover {
+      box-shadow: 0 8px 25px rgba(255, 190, 51, 0.6);
+      transform: translateY(-3px);
+  }
+</style>
 
 <!-- book section -->
-<section class="book_section layout_padding">
+<section class="book_section premium-book-section layout_padding">
   <div class="container">
     <div class="heading_container">
       <h2>

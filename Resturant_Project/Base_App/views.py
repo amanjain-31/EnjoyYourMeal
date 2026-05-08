@@ -15,27 +15,15 @@ def add_to_cart(request):
         item_id = request.POST.get('item_id')
         item = get_object_or_404(Items, id=item_id)
         
-        print(f'Item ID: {item_id}')  # Debug print
-        print(f'Item: {item.Item_name}, Price: {item.Price}')  # Debug print
+        # Get or create the cart item in the database
+        cart_item, created = Cart.objects.get_or_create(user=request.user, item=item)
+        
+        # If it already existed, increment the quantity
+        if not created:
+            cart_item.quantity += 1
+            cart_item.save()
 
-        # Retrieve or initialize the cart from the session
-        cart = request.session.get('cart', {})
-        print(f'Cart before update: {cart}')  # Debug print
-
-        # Update the cart
-        if item_id in cart:
-            cart[item_id]['quantity'] += 1
-        else:
-            cart[item_id] = {
-                'name': item.Item_name,
-                'price': item.Price,
-                'quantity': 1
-            }
-
-        request.session['cart'] = cart
-        print(f'Cart after update: {cart}')  # Debug print
-
-        return JsonResponse({'message': 'Item added to cart', 'cart': cart})
+        return JsonResponse({'message': 'Item added to cart'})
     else:
         print('Invalid request')  # Debug print
         return JsonResponse({'error': 'Invalid request'}, status=400)
@@ -107,11 +95,11 @@ def BookTableView(request):
     google_maps_api_key = settings.GOOGLE_MAPS_API_KEY
 
     if request.method == 'POST':
-        name = request.POST.get('user_name')
-        phone_number = request.POST.get('phone_number')
-        email = request.POST.get('user_email')
-        total_person = request.POST.get('total_person')
-        booking_data = request.POST.get('booking_data')
+        name = request.POST.get('user_name', '')
+        phone_number = request.POST.get('phone_number', '')
+        email = request.POST.get('user_email', '')
+        total_person = request.POST.get('total_person', '0')
+        booking_data = request.POST.get('booking_data', '')
 
         # Validate the form data
         if name != '' and len(phone_number) == 10 and email != '' and total_person != '0' and booking_data != '':
@@ -146,7 +134,7 @@ def BookTableView(request):
 def FeedbackView(request):
     if request.method == 'POST':
         # Get data from the form
-        name = request.POST.get('User_name')
+        name = request.POST.get('User_name', '')
         feedback = request.POST.get('Description')  # Assuming 'Feedback' field is a description
         rating = request.POST.get('Rating')
         image = request.FILES.get('Selfie')  # 'Selfie' field from the form

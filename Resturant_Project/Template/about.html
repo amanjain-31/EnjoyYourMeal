@@ -7,41 +7,41 @@
 
 {% block main %}
 
-  <!-- about section -->
+<!-- about section -->
 
-  <section class="about_section layout_padding">
-    <div class="container  ">
+<section class="about_section layout_padding">
+  <div class="container  ">
 
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="{% static 'images/about-img.png' %} " alt="">
-          </div>
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="img-box">
+          <img src="{% static 'images/about-img.png' %} " alt="">
         </div>
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                We Are Feane
-              </h2>
-            </div>
-           
-              
-              <div>
-                <p>
-                {% for i in data %}
-                {{ i.Description|safe }}
-                {% endfor %}
-              </p>
-             </div>
-             
-           
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              We Are EnjoyYourMeal
+            </h2>
           </div>
+
+
+          <div>
+            <p>
+              {% for i in data %}
+              {{ i.Description|safe }}
+              {% endfor %}
+            </p>
+          </div>
+
+
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- end about section -->
+<!-- end about section -->
 
 {% endblock main %}

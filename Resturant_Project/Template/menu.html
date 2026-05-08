@@ -5,10 +5,147 @@
 {% load static %}
 
 {% block main %}
+<style>
+  /* Premium Dark Glassmorphism Menu UI */
+  .premium-menu-section {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      color: #fff;
+      margin-top: 0;
+  }
+  
+  .premium-menu-section .heading_container h2 {
+      color: #ffbe33; 
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  }
+  
+  .premium-menu-section .filters_menu {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 10px 25px;
+      border-radius: 50px;
+      display: inline-flex;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+  
+  .premium-menu-section .filters_menu li {
+      color: #e0e0e0 !important;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 10px 25px;
+      border-radius: 30px;
+      margin: 0 5px;
+  }
+  
+  .premium-menu-section .filters_menu li:hover, 
+  .premium-menu-section .filters_menu li.active {
+      background: #ffbe33 !important;
+      color: #111 !important;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 190, 51, 0.4);
+  }
+  
+  /* Glassmorphism Cards */
+  .premium-menu-section .box {
+      background: rgba(255, 255, 255, 0.03) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 25px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      height: 100%;
+      margin-bottom: 30px;
+  }
+  
+  .premium-menu-section .box:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 190, 51, 0.5);
+  }
+  
+  .premium-menu-section .img-box {
+      background: rgba(0,0,0,0.2) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 30px 20px;
+      border-radius: 25px 25px 0 0 !important;
+  }
+  
+  .premium-menu-section .img-box img {
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
+  }
+  
+  .premium-menu-section .box:hover .img-box img {
+      transform: scale(1.15) rotate(5deg);
+  }
+  
+  .premium-menu-section .detail-box {
+      color: #eee !important;
+      padding: 30px 25px;
+  }
+  
+  .premium-menu-section .detail-box h5 {
+      color: #ffbe33 !important;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .premium-menu-section .detail-box p {
+      color: #b0b0b0 !important;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+  }
+  
+  .premium-menu-section .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+  }
+  
+  .premium-menu-section .options h6 {
+      color: #fff !important;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0;
+  }
+  
+  .premium-menu-section .btn.add-to-cart {
+      background: linear-gradient(45deg, #ffbe33, #e6a524) !important;
+      border: none;
+      color: #111 !important;
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 190, 51, 0.3);
+  }
+  
+  .premium-menu-section .btn.add-to-cart:hover {
+      box-shadow: 0 8px 25px rgba(255, 190, 51, 0.6);
+      transform: translateY(-3px);
+  }
+</style>
 
   <!-- food section -->
 
-  <section class="food_section layout_padding-bottom">
+  <section class="food_section premium-menu-section layout_padding-bottom">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
@@ -41,7 +178,7 @@
                   </p>
                   <div class="options">
                     <h6>
-                      ${{j.Price}}
+                      ₹{{j.Price}}
                     </h6>
                     <button class="btn btn-success add-to-cart" data-item-id="{{j.id}}" data-item-name="{{j.Item_name}}" data-item-price="{{j.Price}}">
                       Add to Cart

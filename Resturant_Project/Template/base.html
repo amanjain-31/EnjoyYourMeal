@@ -14,15 +14,18 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="">
 
-  <title> Feane </title>
+  <title> EnjoyYourMeal </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
   <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+    integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+    crossorigin="anonymous" />
   <!-- font awesome style -->
   <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
 
@@ -44,46 +47,48 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="{% url "Home" %}">
+          <a class="navbar-brand" href="{% url 'Home' %}">
             <span>
-              Burgger
+              CraveHub
             </span>
           </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item {% block home_status %}{% endblock home_status %}">
-                <a class="nav-link" href="{% url "Home" %}">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'Home' %}">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item {% block menu_status %}{% endblock menu_status %}">
-                <a class="nav-link " href="{% url "Menu" %}">Menu</a>
+                <a class="nav-link " href="{% url 'Menu' %}">Menu</a>
               </li>
               <li class="nav-item {% block about_status %}{% endblock about_status %}">
-                <a class="nav-link" href="{% url "About" %}">About</a>
+                <a class="nav-link" href="{% url 'About' %}">About</a>
               </li>
               <li class="nav-item {% block table_status %}{% endblock table_status %}">
-                <a class="nav-link" href="{% url "Book_Table" %}">Book Table</a>
+                <a class="nav-link" href="{% url 'Book_Table' %}">Book Table</a>
               </li>
               <li class="nav-item {% block feedback_status %}{% endblock feedback_status %}">
-                <a class="nav-link" href="{% url "Feedback_Form" %}">Feedback</a>
+                <a class="nav-link" href="{% url 'Feedback_Form' %}">Feedback</a>
               </li>
             </ul>
             <div class="user_option">
               <div class="user_option">
                 {% if user.is_authenticated %}
-                  <span style="background-color: #f8c6c6; color: #000; padding: 5px 10px; border-radius: 5px; font-weight: bold;">
-                    {{ user.username }}
-                  </span>
-                  <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
-                  <button id="cart-button" class="btn btn-primary">
-                    <i class="fa fa-shopping-cart"></i> Cart
-                  </button>
+                <span
+                  style="background-color: #f8c6c6; color: #000; padding: 5px 10px; border-radius: 5px; font-weight: bold;">
+                  {{ user.username }}
+                </span>
+                <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+                <button id="cart-button" class="btn btn-primary">
+                  <i class="fa fa-shopping-cart"></i> Cart
+                </button>
                 {% else %}
-                  <a href="{% url 'login' %}" class="btn order_online">Login</a>
+                <a href="{% url 'login' %}" class="btn order_online">Login</a>
                 {% endif %}
               </div>
             </div>
@@ -118,7 +123,7 @@
     {% block slider %}{% endblock slider %}
   </div>
 
- {% block main %}{% endblock main %}
+  {% block main %}{% endblock main %}
 
   <!-- footer section -->
   <footer class="footer_section">
@@ -139,13 +144,13 @@
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call +91 88395 95077
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  amanjain310105@gmail.com
                 </span>
               </a>
             </div>
@@ -154,27 +159,21 @@
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-              Feane
+              EnjoyYourMeal
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+              Serving tasty meals with quality ingredients and exceptional hospitality every day.
             </p>
             <div class="footer_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+
+              <a href="https://github.com/amanjain-31/">
+                <i class="fa fa-github" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
+              <a href="https://www.linkedin.com/in/aman-jain-248b612aa/">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
-              </a>
+
+
             </div>
           </div>
         </div>
@@ -186,16 +185,15 @@
             Everyday
           </p>
           <p>
-            10.00 Am -10.00 Pm
+            10:00 AM - 10:00 PM
           </p>
         </div>
       </div>
       <div class="footer-info">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+          &copy; <span id="displayYear"></span> EnjoyYourMeal. All Rights Reserved.
+          <br><br>
+          Designed & Developed by Aman Jain
         </p>
       </div>
     </div>
@@ -205,8 +203,9 @@
   <!-- jQery -->
   <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
   <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
   <!-- bootstrap js -->
   <script src="{% static 'js/bootstrap.js' %} "></script>
   <!-- owl slider -->
@@ -218,32 +217,70 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
   <script src="{% static 'js/custom.js' %} "></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
   <!-- End Google Map -->
-    <!-- JavaScript for Cart Button -->
-    <script>
-      document.getElementById('cart-button').addEventListener('click', function() {
-        fetch('/get-cart-items/')
-          .then(response => response.json())
-          .then(data => {
-            const cartList = document.getElementById('cart-items-list');
-            cartList.innerHTML = '';
-            if (data.items) {
-              data.items.forEach(item => {
-                cartList.innerHTML += `
-                  <li>${item.name} - ${item.quantity} x $${item.price} = $${item.total}</li>
+  <!-- JavaScript for Cart Button -->
+  <script>
+    document.getElementById('cart-button').addEventListener('click', function () {
+      fetch('/get-cart-items/')
+        .then(response => response.json())
+        .then(data => {
+          const cartList = document.getElementById('cart-items-list');
+          cartList.innerHTML = '';
+          if (data.items && data.items.length > 0) {
+            data.items.forEach(item => {
+              cartList.innerHTML += `
+                  <li>${item.name} - ${item.quantity} x ₹${item.price} = ₹${item.total}</li>
                 `;
-              });
-            } else {
-              cartList.innerHTML = '<li>Your cart is empty.</li>';
-            }
-            $('#cart-modal').modal('show');
-          })
-          .catch(error => console.error('Error fetching cart items:', error));
-      });
-    </script>
+            });
+          } else {
+            cartList.innerHTML = '<li>Your cart is empty.</li>';
+          }
+          $('#cart-modal').modal('show');
+        })
+        .catch(error => console.error('Error fetching cart items:', error));
+    });
+  </script>
+
+  <!-- Global Styles & Light Mode Logic -->
+  <style>
+    /* Fix Form Placeholders */
+    .premium-book-section .form-control::-webkit-input-placeholder { color: #ffffff !important; opacity: 1; }
+    .premium-book-section .form-control::-moz-placeholder { color: #ffffff !important; opacity: 1; }
+    .premium-book-section .form-control:-ms-input-placeholder { color: #ffffff !important; opacity: 1; }
+    .premium-book-section .form-control::placeholder { color: #ffffff !important; opacity: 1; }
+    .premium-book-section .form-control { color: #ffffff !important; font-weight: bold; }
+    
+    /* Premium Offers Section */
+    .offer_section {
+        background: linear-gradient(135deg, #2b5876, #4e4376) !important;
+        padding-top: 60px;
+    }
+    .offer_section .box {
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease;
+    }
+    .offer_section .box:hover {
+        transform: scale(1.05);
+        border-color: #ffbe33;
+    }
+
+    /* Fix nice-select dropdown options visibility */
+    .nice-select .list {
+        background-color: #fff !important;
+    }
+    .nice-select .option {
+        color: #333 !important;
+        font-weight: normal !important;
+    }
+    .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
+        background-color: #f6f6f6 !important;
+        color: #111 !important;
+    }
+  </style>
 </body>
 
 </html>
